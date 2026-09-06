@@ -1,6 +1,6 @@
 # The Nain Pair — Lot 01
 
-A single-page auction site for a monumental Nain carpet: hero, long-form history, gallery,
+A single-page auction site for a monumental Nain carpet: hero, gallery, long-form history,
 catalogue specifications, provenance timeline, bidding instructions and an enquiry form.
 
 Plain HTML, CSS and JavaScript. No build step, no dependencies, no framework. Open
@@ -9,7 +9,7 @@ Plain HTML, CSS and JavaScript. No build step, no dependencies, no framework. Op
 ```
 index.html                  the whole page — every section is commented
 assets/css/style.css        all styling; colours and type live in :root at the top
-assets/js/main.js           countdown, gallery lightbox, nav, form
+assets/js/main.js           gallery lightbox, nav, scroll behaviour, form
 assets/images/              your photographs go here — see assets/images/README.md
 content/story.md            a writing template for the history
 ```
@@ -29,9 +29,10 @@ own can be pointed at it from the same screen.
 
 Everything you need to change is marked `EDIT ME` in `index.html`.
 
-1. **The closing date.** Line with `data-auction-end` on the `<section class="auction">`.
-   Use `YYYY-MM-DDTHH:MM:SS` plus your UTC offset, e.g. `2026-11-14T18:00:00-05:00`.
-   The countdown, the closing line and the sticky bar all read from it.
+1. **The contact number.** Amin, 310-592-6293. It appears in the auction bar, the bidding
+   steps, the enquiry form, the sticky bar and the footer — search `3105926293` to find
+   every instance. The `href` is `tel:+13105926293`; the visible text uses non-breaking
+   hyphens so the number never splits across a line.
 2. **Your email address.** `data-inquiry-email` on the enquiry form.
 3. **The story.** The `<article class="story">` section. Draft it in `content/story.md` first.
 4. **The catalogue entry.** The specifications table, the provenance timeline and the FAQ

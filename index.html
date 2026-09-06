@@ -25,7 +25,7 @@
 
 <body>
 
-<a class="skip-link" href="#story">Skip to the story</a>
+<a class="skip-link" href="#gallery">Skip to the gallery</a>
 
 <!-- ============================================================
      HEADER
@@ -41,8 +41,8 @@
     </a>
 
     <nav class="site-nav" id="site-nav" aria-label="Primary">
-      <a href="#story">The Story</a>
       <a href="#gallery">Gallery</a>
+      <a href="#story">The Story</a>
       <a href="#specifications">Specifications</a>
       <a href="#provenance">Provenance</a>
       <a href="#bidding" class="nav-cta">Register to Bid</a>
@@ -90,7 +90,7 @@
 
       <div class="hero-actions reveal">
         <a class="btn btn-primary" href="#bidding">Register to Bid</a>
-        <a class="btn btn-ghost" href="#story">Read the History</a>
+        <a class="btn btn-ghost" href="#gallery">See the Carpet</a>
       </div>
     </div>
   </div>
@@ -100,11 +100,9 @@
 
 <!-- ============================================================
      AUCTION BAR
-     EDIT ME: set the closing date in data-auction-end below.
-     Format: YYYY-MM-DDTHH:MM:SS with your UTC offset, e.g.
-     2026-11-14T18:00:00-05:00
+     EDIT ME: estimate, viewing terms and the contact number.
      ============================================================ -->
-<section class="auction" id="auction" data-auction-end="2026-11-14T18:00:00-05:00">
+<section class="auction" id="auction">
   <div class="wrap auction-inner">
 
     <div class="auction-block">
@@ -113,24 +111,86 @@
       <p class="auction-note">Reserve confidential. Written valuation available to registered bidders.</p>
     </div>
 
-    <div class="auction-block auction-clock">
-      <p class="label">Bidding closes in</p>
-      <div class="countdown" id="countdown" role="timer" aria-live="polite">
-        <div><span data-cd="days">--</span><em>Days</em></div>
-        <div><span data-cd="hours">--</span><em>Hrs</em></div>
-        <div><span data-cd="minutes">--</span><em>Min</em></div>
-        <div><span data-cd="seconds">--</span><em>Sec</em></div>
-      </div>
-      <p class="auction-note" id="auction-date"></p>
+    <div class="auction-block">
+      <p class="label">Viewing</p>
+      <p class="auction-value">By appointment</p>
+      <p class="auction-note">The carpet may be inspected in person, unrolled and under daylight, prior to the close of bidding.</p>
     </div>
 
     <div class="auction-block">
-      <p class="label">Viewing</p>
-      <p class="auction-value auction-value-sm">By appointment</p>
-      <p class="auction-note">The carpet may be inspected in person, unrolled and under daylight, prior to the close of bidding.</p>
-      <a class="link-arrow" href="#bidding">Arrange a viewing</a>
+      <p class="label">Enquiries</p>
+      <p class="auction-value"><a class="tel" href="tel:+13105926293">310&#8209;592&#8209;6293</a></p>
+      <p class="auction-note">Speak to Amin directly. Every enquiry is answered personally, and in confidence.</p>
+      <a class="link-arrow" href="#bidding">Register to bid</a>
     </div>
 
+  </div>
+</section>
+
+<!-- ============================================================
+     GALLERY
+     Drop your photographs in assets/images/ using these exact
+     filenames and they will appear here automatically.
+     ============================================================ -->
+<section class="gallery" id="gallery">
+  <div class="wrap">
+    <header class="section-head reveal">
+      <p class="eyebrow">Photography</p>
+      <h2>The Carpet, in Detail</h2>
+      <p class="section-dek">Select any image to view it full screen. Use the arrow keys to move between them.</p>
+    </header>
+
+    <div class="gallery-grid" id="gallery-grid">
+
+      <figure class="gallery-item gallery-item-lg" data-caption="The field, the medallion and the main border">
+        <img src="assets/images/rug-field-border.jpg" alt="The field, the medallion and the main border" loading="lazy"
+             onerror="this.src='assets/images/placeholder.svg';this.classList.add('is-placeholder')">
+        <figcaption>The field &amp; medallion</figcaption>
+      </figure>
+
+      <figure class="gallery-item" data-caption="The central medallion">
+        <img src="assets/images/rug-medallion.jpg" alt="The central medallion, seen from directly above" loading="lazy"
+             onerror="this.src='assets/images/placeholder.svg';this.classList.add('is-placeholder')">
+        <figcaption>The medallion</figcaption>
+      </figure>
+
+      <figure class="gallery-item" data-caption="The medallion and inner border, from the side">
+        <img src="assets/images/rug-medallion-angle.jpg" alt="The medallion and inner border, seen from the side" loading="lazy"
+             onerror="this.src='assets/images/placeholder.svg';this.classList.add('is-placeholder')">
+        <figcaption>From the side</figcaption>
+      </figure>
+
+      <figure class="gallery-item" data-caption="The field at a raking angle, showing the silk catch the light">
+        <img src="assets/images/rug-field-raking.jpg" alt="The field at a raking angle" loading="lazy"
+             onerror="this.src='assets/images/placeholder.svg';this.classList.add('is-placeholder')">
+        <figcaption>Raking light</figcaption>
+      </figure>
+
+      <figure class="gallery-item" data-caption="Fringe and reverse &mdash; the original colour, unfaded">
+        <img src="assets/images/rug-fringe-reverse.jpg" alt="Fringe and the reverse of the carpet" loading="lazy"
+             onerror="this.src='assets/images/placeholder.svg';this.classList.add('is-placeholder')">
+        <figcaption>Fringe &amp; reverse</figcaption>
+      </figure>
+
+      <figure class="gallery-item" data-caption="The width, measured against a tape">
+        <img src="assets/images/rug-measure.jpg" alt="A tape measure laid across the width of the carpet" loading="lazy"
+             onerror="this.src='assets/images/placeholder.svg';this.classList.add('is-placeholder')">
+        <figcaption>Measured</figcaption>
+      </figure>
+
+      <figure class="gallery-item gallery-item-wide" data-caption="The whole carpet unrolled, seen from the side">
+        <img src="assets/images/rug-full-02.jpg" alt="The whole carpet unrolled, seen from the side" loading="lazy"
+             onerror="this.src='assets/images/placeholder.svg';this.classList.add('is-placeholder')">
+        <figcaption>Unrolled in full</figcaption>
+      </figure>
+
+      <figure class="gallery-item" data-caption="The whole carpet, from above">
+        <img src="assets/images/rug-full-01.jpg" alt="The whole carpet unrolled, seen from above" loading="lazy"
+             onerror="this.src='assets/images/placeholder.svg';this.classList.add('is-placeholder')">
+        <figcaption>The whole carpet</figcaption>
+      </figure>
+
+    </div>
   </div>
 </section>
 
@@ -140,8 +200,6 @@
      below with your own. Keep the structure: intro, sub-headings,
      pull quotes, and inline images.
      ============================================================ -->
-<main>
-
 <article class="story" id="story">
   <div class="wrap wrap-narrow">
 
@@ -260,73 +318,6 @@
 </article>
 
 <!-- ============================================================
-     GALLERY
-     Drop your photographs in assets/images/ using these exact
-     filenames and they will appear here automatically.
-     ============================================================ -->
-<section class="gallery" id="gallery">
-  <div class="wrap">
-    <header class="section-head reveal">
-      <p class="eyebrow">Photography</p>
-      <h2>The Carpet, in Detail</h2>
-      <p class="section-dek">Select any image to view it full screen. Use the arrow keys to move between them.</p>
-    </header>
-
-    <div class="gallery-grid" id="gallery-grid">
-
-      <figure class="gallery-item gallery-item-lg" data-caption="The field, the medallion and the main border">
-        <img src="assets/images/rug-field-border.jpg" alt="The field, the medallion and the main border" loading="lazy"
-             onerror="this.src='assets/images/placeholder.svg';this.classList.add('is-placeholder')">
-        <figcaption>The field &amp; medallion</figcaption>
-      </figure>
-
-      <figure class="gallery-item" data-caption="The central medallion">
-        <img src="assets/images/rug-medallion.jpg" alt="The central medallion, seen from directly above" loading="lazy"
-             onerror="this.src='assets/images/placeholder.svg';this.classList.add('is-placeholder')">
-        <figcaption>The medallion</figcaption>
-      </figure>
-
-      <figure class="gallery-item" data-caption="The medallion and inner border, from the side">
-        <img src="assets/images/rug-medallion-angle.jpg" alt="The medallion and inner border, seen from the side" loading="lazy"
-             onerror="this.src='assets/images/placeholder.svg';this.classList.add('is-placeholder')">
-        <figcaption>From the side</figcaption>
-      </figure>
-
-      <figure class="gallery-item" data-caption="The field at a raking angle, showing the silk catch the light">
-        <img src="assets/images/rug-field-raking.jpg" alt="The field at a raking angle" loading="lazy"
-             onerror="this.src='assets/images/placeholder.svg';this.classList.add('is-placeholder')">
-        <figcaption>Raking light</figcaption>
-      </figure>
-
-      <figure class="gallery-item" data-caption="Fringe and reverse &mdash; the original colour, unfaded">
-        <img src="assets/images/rug-fringe-reverse.jpg" alt="Fringe and the reverse of the carpet" loading="lazy"
-             onerror="this.src='assets/images/placeholder.svg';this.classList.add('is-placeholder')">
-        <figcaption>Fringe &amp; reverse</figcaption>
-      </figure>
-
-      <figure class="gallery-item" data-caption="The width, measured against a tape">
-        <img src="assets/images/rug-measure.jpg" alt="A tape measure laid across the width of the carpet" loading="lazy"
-             onerror="this.src='assets/images/placeholder.svg';this.classList.add('is-placeholder')">
-        <figcaption>Measured</figcaption>
-      </figure>
-
-      <figure class="gallery-item gallery-item-wide" data-caption="The whole carpet unrolled, seen from the side">
-        <img src="assets/images/rug-full-02.jpg" alt="The whole carpet unrolled, seen from the side" loading="lazy"
-             onerror="this.src='assets/images/placeholder.svg';this.classList.add('is-placeholder')">
-        <figcaption>Unrolled in full</figcaption>
-      </figure>
-
-      <figure class="gallery-item" data-caption="The whole carpet, from above">
-        <img src="assets/images/rug-full-01.jpg" alt="The whole carpet unrolled, seen from above" loading="lazy"
-             onerror="this.src='assets/images/placeholder.svg';this.classList.add('is-placeholder')">
-        <figcaption>The whole carpet</figcaption>
-      </figure>
-
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================
      SPECIFICATIONS
      ============================================================ -->
 <section class="specs" id="specifications">
@@ -430,7 +421,7 @@
         <p class="eyebrow">Bidding</p>
         <h2>How to Bid</h2>
         <ol class="steps">
-          <li><strong>Register your interest.</strong> Complete the form and you will receive the condition report, the full photography set and the reserve.</li>
+          <li><strong>Register your interest.</strong> Complete the form, or call Amin on <a class="tel" href="tel:+13105926293">310&#8209;592&#8209;6293</a>, and you will receive the condition report, the full photography set and the reserve.</li>
           <li><strong>Inspect the carpet.</strong> In person by appointment, or by video walkthrough with the carpet unrolled.</li>
           <li><strong>Place your bid.</strong> Bids are submitted in writing and acknowledged in writing. The highest bid at the close is invited to complete.</li>
           <li><strong>Completion and delivery.</strong> Payment by bank transfer or escrow. Fully insured white-glove shipping arranged worldwide at the buyer's cost.</li>
@@ -446,7 +437,10 @@
         <!-- EDIT ME: your email address -->
         <form id="inquiry-form" data-inquiry-email="you@example.com" novalidate>
           <h3>Register to bid</h3>
-          <p class="form-dek">Every enquiry is answered personally, and in confidence.</p>
+          <p class="form-dek">
+            Every enquiry is answered personally, and in confidence. To speak to Amin
+            directly, call <a class="tel" href="tel:+13105926293">310&#8209;592&#8209;6293</a>.
+          </p>
 
           <div class="field">
             <label for="f-name">Full name</label>
@@ -535,11 +529,12 @@
   <div class="wrap footer-inner">
     <div class="footer-brand">
       <span class="wordmark-mark">N</span>
-      <p><strong>The Nain Pair</strong><br>Lot 01 &middot; Private auction</p>
+      <p><strong>The Nain Pair</strong><br>Lot 01 &middot; Private auction<br>
+      Amin &middot; <a class="tel" href="tel:+13105926293">310&#8209;592&#8209;6293</a></p>
     </div>
     <nav class="footer-nav" aria-label="Footer">
-      <a href="#story">The Story</a>
       <a href="#gallery">Gallery</a>
+      <a href="#story">The Story</a>
       <a href="#specifications">Specifications</a>
       <a href="#provenance">Provenance</a>
       <a href="#faq">Questions</a>
@@ -557,9 +552,9 @@
 <div class="stickybar" id="stickybar">
   <div>
     <strong>Nain Grand Carpet</strong>
-    <span id="stickybar-time">Bidding open</span>
+    <span>Amin &middot; 310&#8209;592&#8209;6293</span>
   </div>
-  <a class="btn btn-primary btn-sm" href="#bidding">Register</a>
+  <a class="btn btn-primary btn-sm" href="tel:+13105926293">Call</a>
 </div>
 
 <!-- Lightbox -->

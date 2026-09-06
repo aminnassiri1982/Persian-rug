@@ -42,68 +42,6 @@
     });
   }
 
-  /* ---------- countdown to the close of bidding ----------
-     The closing date is set on <section class="auction"
-     data-auction-end="..."> in index.html.
-     ------------------------------------------------------- */
-
-  var auction = document.getElementById('auction');
-  var dateLine = document.getElementById('auction-date');
-  var stickyTime = document.getElementById('stickybar-time');
-  var cd = {};
-  ['days', 'hours', 'minutes', 'seconds'].forEach(function (k) {
-    cd[k] = document.querySelector('[data-cd="' + k + '"]');
-  });
-
-  if (auction && cd.days) {
-    var end = new Date(auction.getAttribute('data-auction-end'));
-
-    if (isNaN(end.getTime())) {
-      if (dateLine) dateLine.textContent = 'Closing date to be announced.';
-    } else {
-      if (dateLine) {
-        dateLine.textContent = 'Closes ' + end.toLocaleString(undefined, {
-          weekday: 'long', day: 'numeric', month: 'long', year: 'numeric',
-          hour: 'numeric', minute: '2-digit', timeZoneName: 'short'
-        }) + '.';
-      }
-
-      var pad = function (n) { return n < 10 ? '0' + n : String(n); };
-
-      var tick = function () {
-        var diff = end.getTime() - Date.now();
-
-        if (diff <= 0) {
-          ['days', 'hours', 'minutes', 'seconds'].forEach(function (k) { cd[k].textContent = '00'; });
-          if (dateLine) dateLine.textContent = 'Bidding has closed. Enquiries are still welcome.';
-          if (stickyTime) stickyTime.textContent = 'Bidding closed';
-          clearInterval(timer);
-          return;
-        }
-
-        var s = Math.floor(diff / 1000);
-        var d = Math.floor(s / 86400);
-        var h = Math.floor((s % 86400) / 3600);
-        var m = Math.floor((s % 3600) / 60);
-        var sec = s % 60;
-
-        cd.days.textContent = pad(d);
-        cd.hours.textContent = pad(h);
-        cd.minutes.textContent = pad(m);
-        cd.seconds.textContent = pad(sec);
-
-        if (stickyTime) {
-          stickyTime.textContent = d > 0
-            ? d + ' days ' + pad(h) + 'h left to bid'
-            : pad(h) + ':' + pad(m) + ':' + pad(sec) + ' left to bid';
-        }
-      };
-
-      tick();
-      var timer = setInterval(tick, 1000);
-    }
-  }
-
   /* ---------- reveal on scroll ---------- */
 
   var revealables = document.querySelectorAll('.reveal');
