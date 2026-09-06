@@ -33,34 +33,45 @@ Everything you need to change is marked `EDIT ME` in `index.html`.
    steps, the enquiry form, the sticky bar and the footer — search `3105926293` to find
    every instance. The `href` is `tel:+13105926293`; the visible text uses non-breaking
    hyphens so the number never splits across a line.
-2. **Your email address.** `data-inquiry-email` on the enquiry form.
-3. **The story.** The `<article class="story">` section. Draft it in `content/story.md` first.
-4. **The catalogue entry.** The specifications table, the provenance timeline and the FAQ
-   all have placeholders in italics.
-5. **The photographs.** See `assets/images/README.md` for the filenames and shooting notes.
+2. **The remaining catalogue gaps.** Four facts are still marked in italics because only
+   you have them: knot density (raj / KPSI), the signature if the carpet is signed, and the
+   restoration and washing history (in the Specifications table and again in the FAQ).
+3. **The story.** The `<article class="story">` section carries the family account as
+   dictated: the grandfather's purchase, the retired cartoon, the second carpet, the 2018
+   shipment. Rewrite freely — `content/story.md` is a scratch copy.
+4. **The second carpet.** The `#the-pair` section states the claim and, separately, what
+   the photograph does and does not establish. Keep those two things apart; it is what
+   makes the claim credible to a buyer's advisor.
+5. **The photographs.** See `assets/images/README.md` for filenames and shooting notes.
 
-## Collecting enquiries properly
+## Enquiries
 
-With no back end, the form composes an email in the visitor's own mail client. That works
-everywhere, but you lose anyone who doesn't have mail configured in their browser.
+There is no form and no back end. Every route to contact is a `tel:` link to
+310-592-6293 — the auction bar, the first step of *How to Buy*, the call panel, the sticky
+bar and the footer. On a phone each one dials directly; on a desktop it opens whatever
+calling app the visitor has.
 
-To have enquiries land in your inbox directly, create a form at
-[Formspree](https://formspree.io) or [Basin](https://usebasin.com), then in `index.html`:
-
-```html
-<form id="inquiry-form" action="https://formspree.io/f/YOUR_ID" method="POST">
-```
-
-and delete the `submit` handler at the bottom of `assets/js/main.js`. The field names
-(`name`, `email`, `phone`, `interest`, `message`) already match what those services expect.
+If you later want written enquiries as well, add an `mailto:` link beside the number rather
+than re-introducing a form — a form on a page like this collects mostly spam.
 
 ## A note on the provenance claims
 
-The page presents the ownership history as *related by the current owner*, invites buyers
-to commission an independent appraisal, and offers a provenance file to registered bidders.
-Keep that framing. At this price level, claims about earlier owners are the first thing a
-serious buyer's advisor will test, and stating plainly what is documented and what is family
-account is what makes the documented part believable.
+The page keeps two things apart on purpose:
+
+- **The family line** — grandfather's purchase, inheritance, the 2018 shipment — is stated
+  directly, because it is first-hand.
+- **The second carpet** — the Shah, Rafsanjani, the presidential complex, Farah Pahlavi's
+  search — is stated as family account, and the section carrying the press photograph says
+  in as many words what that photograph does and does not establish.
+
+Keep that separation. At this price a buyer's advisor tests the ownership claims first, and
+saying plainly which parts are documented is what makes the documented parts believable.
+Presenting the photograph as outright proof would invite exactly the scrutiny that sinks it.
+
+**Before the page goes public, settle the rights to that photograph.** It is a press image
+from a Jerusalem Post article, reproduced here with the publication, date and author
+credited. Credit is not a licence. Either obtain permission, or replace the image with a
+link to the article and describe what it shows — the argument survives either way.
 
 ## Design notes
 

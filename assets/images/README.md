@@ -17,6 +17,7 @@ of these can be regenerated.
 | `rug-measure.jpg` | Specifications sidebar, and gallery | `DSC_0585` |
 | `rug-full-01.jpg` | The Story, wide figure, and gallery | `IMG-2604`, cropped |
 | `rug-full-02.jpg` | Gallery, wide tile | `IMG-2605`, cropped |
+| `the-pair-press-photo.jpg` | The Second Carpet | the Jerusalem Post screenshot, cropped to the press photograph. **Rights not cleared — see the note in the root README before publishing.** |
 
 The two full-carpet shots were cropped to the carpet and its immediate surround — the
 parked cars, the street and the wheelie bin are out of frame.

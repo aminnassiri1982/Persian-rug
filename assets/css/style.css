@@ -30,7 +30,17 @@
 
 *,*::before,*::after{ box-sizing:border-box; }
 
-html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+/* The canvas behind the page must be dark, not the body's cream. An <html>
+   with no background lets the body's colour propagate to the canvas, so on a
+   phone the rubber-band overscroll and the safe area above the dark hero
+   filled with near-white — which reads as a broken white band at the top.
+   Both ends of the page are dark (hero, footer), so ink is right for both. */
+html{
+  background:var(--ink);
+  color-scheme:light;
+  scroll-behavior:smooth;
+  -webkit-text-size-adjust:100%;
+}
 @media (prefers-reduced-motion: reduce){ html{ scroll-behavior:auto; } }
 
 body{
@@ -213,7 +223,7 @@ h1,h2,h3{ font-family:var(--display); font-weight:400; letter-spacing:.005em; ma
 
 /* ---------- hero ---------- */
 
-.hero{ position:relative; min-height:100svh; display:flex; align-items:flex-end; isolation:isolate; background:var(--ink); }
+.hero{ position:relative; min-height:100vh; min-height:100svh; display:flex; align-items:flex-end; isolation:isolate; background:var(--ink); }
 .hero-media{ position:absolute; inset:0; z-index:-2; overflow:hidden; }
 .hero-media img{ width:100%; height:100%; object-fit:cover; object-position:center; }
 /* The carpet has an ivory ground, so a flat scrim would drain the colour
@@ -412,6 +422,13 @@ h1,h2,h3{ font-family:var(--display); font-weight:400; letter-spacing:.005em; ma
 .timeline p{ margin:0; color:rgba(247,242,233,.68); font-size:.95rem; max-width:52ch; }
 .timeline p em{ color:rgba(247,242,233,.5); }
 
+/* ---------- the second carpet ---------- */
+
+.pair{ padding-block:var(--section-y); }
+.pair .section-head{ text-align:center; margin-inline:auto; }
+.figure-press img{ border:1px solid var(--rule); background:var(--paper-2); }
+.figure-press figcaption em{ font-style:italic; color:var(--ink-soft); }
+
 /* ---------- bidding ---------- */
 
 .bidding{ padding-block:var(--section-y); background:var(--paper-2); }
@@ -434,27 +451,20 @@ h1,h2,h3{ font-family:var(--display); font-weight:400; letter-spacing:.005em; ma
 .terms p:last-child{ margin:0; font-size:.85rem; color:var(--ink-faint); line-height:1.6; }
 
 .bidding-form{ background:var(--paper); padding:clamp(1.75rem,4vw,2.75rem); border:1px solid var(--rule); }
-.bidding-form h3{ font-size:1.9rem; margin:0 0 .5rem; }
-.form-dek{ font-size:.88rem; color:var(--ink-faint); margin:0 0 1.75rem; }
 
-.field{ margin-bottom:1.15rem; }
-.field label{
-  display:block; font-size:.66rem; font-weight:500; letter-spacing:.18em;
-  text-transform:uppercase; color:var(--ink-faint); margin-bottom:.5rem;
+.call-card{ text-align:left; }
+.call-card h3{ font-size:clamp(1.9rem,1.5rem + 1.4vw,2.5rem); margin:0 0 1.25rem; }
+.call-number{
+  display:block; font-family:var(--display); font-weight:500;
+  font-size:clamp(2.2rem,1.5rem + 2.6vw,3.1rem); line-height:1;
+  letter-spacing:-.01em; color:var(--ink); text-decoration:none;
+  padding-bottom:1.1rem; margin-bottom:1.25rem;
+  border-bottom:1px solid var(--gold);
+  transition:color .3s var(--ease);
 }
-.field .opt{ text-transform:none; letter-spacing:.02em; font-style:italic; opacity:.7; }
-.field input,.field select,.field textarea{
-  width:100%; font-family:var(--ui); font-size:.95rem; font-weight:300; color:var(--ink);
-  background:transparent; border:0; border-bottom:1px solid var(--rule);
-  padding:.65rem 0; border-radius:0; transition:border-color .3s var(--ease);
-}
-.field textarea{ resize:vertical; }
-.field select{ appearance:none; background-image:linear-gradient(45deg,transparent 50%,var(--ink-faint) 50%),linear-gradient(135deg,var(--ink-faint) 50%,transparent 50%); background-position:calc(100% - 12px) 1.15rem,calc(100% - 7px) 1.15rem; background-size:5px 5px,5px 5px; background-repeat:no-repeat; }
-.field input:focus,.field select:focus,.field textarea:focus{ outline:0; border-bottom-color:var(--gold); }
-.field input.is-invalid,.field textarea.is-invalid{ border-bottom-color:var(--madder); }
-.bidding-form .btn{ margin-top:.75rem; }
-.form-note{ font-size:.82rem; color:var(--ink-faint); margin:.9rem 0 0; min-height:1.2em; }
-.form-note.is-error{ color:var(--madder); }
+.call-number:hover{ color:var(--gold); }
+.call-dek{ font-size:.95rem; color:var(--ink-soft); margin:0 0 1.75rem; }
+.call-note{ font-size:.8rem; color:var(--ink-faint); margin:1rem 0 0; line-height:1.6; }
 
 /* ---------- faq ---------- */
 
@@ -566,7 +576,7 @@ h1,h2,h3{ font-family:var(--display); font-weight:400; letter-spacing:.005em; ma
     gap:0; background:var(--paper); padding:1rem var(--gutter) 2rem;
     border-bottom:1px solid var(--rule);
     transform:translateY(-115%); transition:transform .45s var(--ease);
-    max-height:calc(100svh - 78px); overflow-y:auto;
+    max-height:calc(100vh - 78px); max-height:calc(100svh - 78px); overflow-y:auto;
   }
   .site-nav.is-open{ transform:none; }
   .site-nav a{ color:var(--ink) !important; padding:1.05rem 0; border-bottom:1px solid var(--rule); opacity:1; }
@@ -584,18 +594,20 @@ h1,h2,h3{ font-family:var(--display); font-weight:400; letter-spacing:.005em; ma
   .figure-pair{ grid-template-columns:1fr; }
   .figure-wide{ width:auto; margin-inline:0; }
   .hero-facts li{ flex:1 1 45%; }
+  .hero-body{ padding:clamp(6rem,11vh,7.5rem) 0 clamp(3rem,6vh,4rem); }
   .hero::after{
     background:linear-gradient(to top,
-      rgba(12,9,7,.90) 0%, rgba(12,9,7,.74) 38%,
-      rgba(12,9,7,.46) 70%, rgba(12,9,7,.60) 100%);
+      rgba(12,9,7,.94) 0%, rgba(12,9,7,.88) 40%,
+      rgba(12,9,7,.80) 75%, rgba(12,9,7,.70) 100%);
   }
   .hero-facts li:nth-child(3){ border-left:0; padding-left:0; }
 }
 
 @media (max-width:560px){
-  .hero-facts li + li{ border-left:0; padding-left:0; }
-  .hero-facts li{ flex:1 1 100%; border-top:1px solid var(--rule-light); }
-  .hero-facts li:first-child{ border-top:0; }
+  .hero-facts li{ flex:1 1 42%; padding-right:1rem; }
+  .hero-facts li:nth-child(odd){ border-left:0; padding-left:0; }
+  .hero-facts li:nth-child(n+3){ border-top:1px solid var(--rule-light); }
+  .hero-facts strong{ font-size:1.3rem; }
   .gallery-grid{ grid-template-columns:1fr; grid-auto-rows:auto; }
   .gallery-item,.gallery-item-lg,.gallery-item-wide{ grid-column:span 1; grid-row:span 1; aspect-ratio:4/3; }
   .spec-row{ grid-template-columns:1fr; gap:.4rem; }

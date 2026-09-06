@@ -137,56 +137,6 @@
     });
   }
 
-  /* ---------- enquiry form ----------
-     With no back end, this composes an email in the visitor's own
-     mail client. README.md explains how to point it at a form
-     service instead, so enquiries arrive in your inbox directly.
-     ----------------------------------- */
-
-  var form = document.getElementById('inquiry-form');
-  var note = document.getElementById('form-note');
-
-  if (form) {
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-
-      var required = ['name', 'email'];
-      var missing = false;
-
-      required.forEach(function (n) {
-        var field = form.elements[n];
-        var ok = field.value.trim() !== '' && (n !== 'email' || /.+@.+\..+/.test(field.value));
-        field.classList.toggle('is-invalid', !ok);
-        if (!ok) missing = true;
-      });
-
-      if (missing) {
-        note.textContent = 'Please add your name and a valid email address.';
-        note.classList.add('is-error');
-        return;
-      }
-
-      note.classList.remove('is-error');
-
-      var to = form.getAttribute('data-inquiry-email');
-      var subject = 'Lot 01, Nain Grand Carpet — ' + form.elements.interest.value;
-      var body = [
-        'Name: ' + form.elements.name.value,
-        'Email: ' + form.elements.email.value,
-        'Telephone: ' + (form.elements.phone.value || '—'),
-        'Enquiry: ' + form.elements.interest.value,
-        '',
-        form.elements.message.value || ''
-      ].join('\n');
-
-      window.location.href = 'mailto:' + to +
-        '?subject=' + encodeURIComponent(subject) +
-        '&body=' + encodeURIComponent(body);
-
-      note.textContent = 'Opening your email client — send the message to complete your enquiry.';
-    });
-  }
-
   /* ---------- current year, if a footer ever needs it ---------- */
 
   var y = document.querySelector('[data-year]');
