@@ -1,0 +1,20 @@
+// Cloudflare Workers configuration.
+//
+// This project is a static site with no server code. Workers serves that
+// natively through Static Assets: with `assets` set and no `main` entry
+// point, the Worker is assets-only — Cloudflare uploads the folder and
+// serves it, with no script to run.
+//
+// `build.command` runs before the upload, producing dist/ from the repo.
+// dist/ deliberately excludes photos-original/, so the 15 MB of camera
+// originals are never uploaded.
+{
+  "name": "persian-rug",
+  "compatibility_date": "2026-09-06",
+  "build": {
+    "command": "npm run build"
+  },
+  "assets": {
+    "directory": "./dist"
+  }
+}

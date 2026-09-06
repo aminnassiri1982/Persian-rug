@@ -5,9 +5,33 @@ directly — there is nothing to compile.
 
 ---
 
-# Cloudflare Pages
+# Cloudflare
 
-## Route A — Cloudflare pulls from Git (the normal way)
+## Is it a Worker or a Pages project?
+
+These are different products under one "Workers & Pages" heading, and they fail
+differently. Look at the application row in the dashboard:
+
+- **"No active routes"**, a *requests* chart, a `*.workers.dev` address → it is a **Worker**.
+- A `*.pages.dev` address and a *Deployments* tab → it is a **Pages project**.
+
+`persian-rug` is a Worker. `wrangler.jsonc` in this repo configures it: with `assets` set
+and no `main` entry point it is an assets-only Worker, so Cloudflare uploads `dist/` and
+serves it with no script to run. `build.command` produces `dist/` first.
+
+If the dashboard has its own build command set for this Worker, clear it or set it to
+`npm run build`; leave the deploy command as `npx wrangler deploy`.
+
+A Worker build failing *before* this config existed is expected — there was no wrangler
+configuration and no Worker script for it to deploy.
+
+## Pages instead — Route A, Cloudflare pulls from Git
+
+If you would rather run this as a Pages project than a Worker, delete the `persian-rug`
+Worker and create a new application with **Pages → Connect to Git**. Note that a
+`wrangler.jsonc` containing Workers-only fields will make a *Pages* build fail validation —
+so if you switch to Pages, delete `wrangler.jsonc` or replace its contents with
+`{ "name": "persian-rug", "pages_build_output_dir": "./dist" }`.
 
 **Settings → Build:**
 
