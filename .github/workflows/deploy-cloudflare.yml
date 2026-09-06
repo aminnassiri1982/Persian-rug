@@ -1,0 +1,40 @@
+# Deploys the site to Cloudflare Pages from GitHub Actions.
+#
+# Use this when Cloudflare's own Git integration will not connect to the
+# repository. It does not depend on that integration at all: GitHub runs the
+# deploy and pushes the finished site to Cloudflare over the API.
+#
+# Two repository secrets are required — see DEPLOY.md for how to create them:
+#   CLOUDFLARE_API_TOKEN    a token with the "Cloudflare Pages — Edit" permission
+#   CLOUDFLARE_ACCOUNT_ID   the account ID from the Cloudflare dashboard sidebar
+
+name: Deploy to Cloudflare Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: cloudflare-pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Assemble the site
+        run: npm run build
+
+      - name: Publish to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy dist --project-name=persian-rug --branch=main

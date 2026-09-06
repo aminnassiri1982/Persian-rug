@@ -1,11 +1,15 @@
-# Deploying to Cloudflare Pages
+# Deploying
 
-This is a plain static site. There is nothing to compile — `index.html` sits at the repo
-root and the browser loads it directly.
+This is a plain static site. `index.html` sits at the repo root and the browser loads it
+directly — there is nothing to compile.
 
-## Settings that work
+---
 
-In **Cloudflare dashboard → Workers & Pages → your project → Settings → Build**:
+# Cloudflare Pages
+
+## Route A — Cloudflare pulls from Git (the normal way)
+
+**Settings → Build:**
 
 | Setting | Value |
 |---|---|
@@ -15,45 +19,78 @@ In **Cloudflare dashboard → Workers & Pages → your project → Settings → 
 | Root directory | `/` |
 | Production branch | `main` |
 
-That's it. Cloudflare uploads the repo as-is.
+## Route B — GitHub pushes to Cloudflare (when Route A won't connect)
 
-## If the build fails
+`.github/workflows/deploy-cloudflare.yml` in this repo deploys to Cloudflare Pages from
+GitHub Actions. It does not use Cloudflare's Git integration at all, so it is unaffected by
+whatever is stopping that integration from firing. Three steps:
 
-A static site with no build command should never fail. When it does, it is almost always
-one of these three:
+**1. Create the Pages project.** Cloudflare dashboard → **Workers & Pages → Create →
+Pages → Upload assets**. Name it exactly **`persian-rug`**. Upload anything to get past the
+first screen — the workflow overwrites it on the next push.
 
-**1. "Missing script: build" / "npm ERR!"**
-Cloudflare is running a build command against a repo that has no build system. Either clear
-the build command entirely, or leave it as `npm run build` — this repo now ships a
-`package.json` whose `build` script simply copies the site into `dist/`, so either
-configuration succeeds.
+**2. Get an API token.** [dash.cloudflare.com/profile/api-tokens](https://dash.cloudflare.com/profile/api-tokens)
+→ **Create Token** → use the **Edit Cloudflare Workers** template, or a custom token with
+the **Account → Cloudflare Pages → Edit** permission. Copy the token — it is shown once.
+Your **Account ID** is in the right-hand sidebar of any dashboard page, and in the URL
+after `dash.cloudflare.com/`.
 
-**2. "Output directory not found"**
-The output directory is set to something that doesn't exist, usually `dist` or `public`
-left over from a framework preset. Set it to `/`. If you'd rather keep `dist`, set the
-build command to `npm run build` and this repo will produce that folder for you.
+**3. Add both as repository secrets.** GitHub → this repo → **Settings → Secrets and
+variables → Actions → New repository secret**:
 
-**3. "Branch not found" / no deployment is triggered at all**
-The production branch is set to a branch that doesn't exist. Check
-**Settings → Build → Branch control** and make sure the production branch matches a real
-branch name in the repository.
+| Name | Value |
+|---|---|
+| `CLOUDFLARE_API_TOKEN` | the token from step 2 |
+| `CLOUDFLARE_ACCOUNT_ID` | the account ID from step 2 |
 
-## If the repository doesn't appear in Cloudflare's list
+Then push, or run it by hand from the **Actions** tab → *Deploy to Cloudflare Pages* →
+**Run workflow**. The Actions log shows exactly what happened, which is the part Cloudflare's
+own integration does not give you when it silently does nothing.
 
-The Cloudflare GitHub App is installed per-repository, and it does not automatically pick
-up repositories created after installation. Go to
-**GitHub → Settings → Applications → Cloudflare Pages → Configure**, and either select this
-repository or switch the app to **All repositories**. Then re-check Cloudflare's dropdown.
+## Troubleshooting
 
-## Reading the build log
+### Nothing happens at all — no deployment is ever triggered
 
-Cloudflare's log tells you which of the above it is in the first ten lines. Open
-**your project → Deployments → the failed deployment → View build log**, and look for the
-first line beginning `Failed:` or `Error:`. That line names the cause directly.
+The repository and Cloudflare are not actually connected. In order of likelihood:
 
-## The alternative, if Cloudflare stays stubborn
+1. **The project is a "Direct Upload" project.** Direct Upload projects never watch a Git
+   repository, and Cloudflare does not let you convert one to a Git-connected project. Check
+   **your project → Settings**: if there is no *Git repository* row, this is it. Fix: create
+   a **new** project with **Connect to Git**, or use Route B above.
+2. **The Cloudflare GitHub App cannot see this repository.** The app is installed
+   per-repository and does **not** pick up repositories created after installation — and
+   this repository was created after. Go to **GitHub → Settings → Applications → Cloudflare
+   Pages → Configure**, then either add `Persian-rug` or switch to **All repositories**.
+3. **The production branch does not exist.** Check **Settings → Build → Branch control**.
+   This repository has two branches: `main` and `claude/watch-auction-page-design-5zhh9i`.
+4. **The project is connected to a different repository or a different Cloudflare account.**
+   Worth ruling out — check the *Git repository* row names `aminnassiri1982/Persian-rug`.
 
-GitHub Pages serves this repo with no build system at all:
+### A build runs but fails
+
+For a static site with no build command, it is one of three things:
+
+- **"Missing script: build" / npm errors** — Cloudflare is running a build command against a
+  repo with no build system. Either clear the build command, or leave `npm run build`: this
+  repo ships a `package.json` whose `build` script copies the site into `dist/`, so both
+  configurations succeed.
+- **"Output directory not found"** — usually `dist` or `public` left over from a framework
+  preset. Set it to `/`, or set the build command to `npm run build` and this repo will
+  produce `dist/` for you.
+- **"Branch not found"** — the production branch does not match a real branch name.
+
+### Reading the build log
+
+**Your project → Deployments → the failed deployment → View build log.** The first line
+beginning `Failed:` or `Error:` names the cause directly.
+
+---
+
+# GitHub Pages (no configuration, no tokens)
+
+If Cloudflare stays stubborn, this works with two clicks and no credentials:
+
 **Settings → Pages → Source: Deploy from a branch → Branch: `main` / `(root)` → Save.**
+
 The site appears at `https://aminnassiri1982.github.io/Persian-rug/` within a minute or two.
-You can point a custom domain at either host later.
+A custom domain can be pointed at either host later, so this costs nothing to try.
