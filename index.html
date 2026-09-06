@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- ============================================================
+     EDIT ME: page title + search/social preview text
+     ============================================================ -->
+<title>Lot 01 — Nain Grand Carpet, Wool &amp; Silk on Silk | Private Auction</title>
+<meta name="description" content="A monumental Nain carpet, 13'5&quot; x 21'3&quot;, wool and silk on a silk foundation. Over sixty years old, and one of a matched pair. Offered at private auction.">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Lot 01 — Nain Grand Carpet, Wool &amp; Silk on Silk">
+<meta property="og:description" content="13'5&quot; x 21'3&quot;. Wool and silk on a silk foundation. Over sixty years old. One of a matched pair.">
+<meta property="og:image" content="assets/images/hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="assets/images/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+<a class="skip-link" href="#story">Skip to the story</a>
+
+<!-- ============================================================
+     HEADER
+     ============================================================ -->
+<header class="site-header" id="top">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="#top">
+      <span class="wordmark-mark">N</span>
+      <span class="wordmark-text">
+        <strong>The Nain Pair</strong>
+        <em>Private Auction &middot; Lot 01</em>
+      </span>
+    </a>
+
+    <nav class="site-nav" id="site-nav" aria-label="Primary">
+      <a href="#story">The Story</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#specifications">Specifications</a>
+      <a href="#provenance">Provenance</a>
+      <a href="#bidding" class="nav-cta">Register to Bid</a>
+    </nav>
+
+    <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+      <span class="sr-only">Menu</span>
+      <span class="nav-toggle-bars" aria-hidden="true"></span>
+    </button>
+  </div>
+</header>
+
+<!-- ============================================================
+     HERO
+     Replace assets/images/hero.jpg with the full, straight-on
+     photograph of the carpet. Landscape, as large as you have.
+     ============================================================ -->
+<section class="hero" id="hero">
+  <div class="hero-media">
+    <img src="assets/images/hero.jpg" alt="The Nain carpet photographed in full, straight on"
+         onerror="this.src='assets/images/placeholder.svg';this.classList.add('is-placeholder')">
+  </div>
+
+  <div class="hero-body">
+    <div class="wrap">
+      <p class="eyebrow reveal">Lot 01 &middot; Offered by private treaty auction</p>
+
+      <h1 class="hero-title reveal">
+        A Nain Grand Carpet<br>
+        <span class="hero-title-sub">Wool &amp; Silk on a Silk Foundation</span>
+      </h1>
+
+      <p class="hero-dek reveal">
+        Thirteen feet by twenty-one. Sixty years of a single room's light.
+        One of two ever woven to this cartoon &mdash; and the only one that
+        has ever been offered.
+      </p>
+
+      <ul class="hero-facts reveal">
+        <li><strong>13&prime;5&Prime; &times; 21&prime;3&Prime;</strong><span>4.09 m &times; 6.48 m</span></li>
+        <li><strong>Wool &amp; Silk</strong><span>on silk foundation</span></li>
+        <li><strong>60+ Years</strong><span>circa 1960s</span></li>
+        <li><strong>1 of 2</strong><span>a matched pair</span></li>
+      </ul>
+
+      <div class="hero-actions reveal">
+        <a class="btn btn-primary" href="#bidding">Register to Bid</a>
+        <a class="btn btn-ghost" href="#story">Read the History</a>
+      </div>
+    </div>
+  </div>
+
+  <a class="scroll-cue" href="#auction" aria-label="Scroll to auction details"><span></span></a>
+</section>
+
+<!-- ============================================================
+     AUCTION BAR
+     EDIT ME: set the closing date in data-auction-end below.
+     Format: YYYY-MM-DDTHH:MM:SS with your UTC offset, e.g.
+     2026-11-14T18:00:00-05:00
+     ============================================================ -->
+<section class="auction" id="auction" data-auction-end="2026-11-14T18:00:00-05:00">
+  <div class="wrap auction-inner">
+
+    <div class="auction-block">
+      <p class="label">Estimate</p>
+      <p class="auction-value">Price on request</p>
+      <p class="auction-note">Reserve confidential. Written valuation available to registered bidders.</p>
+    </div>
+
+    <div class="auction-block auction-clock">
+      <p class="label">Bidding closes in</p>
+      <div class="countdown" id="countdown" role="timer" aria-live="polite">
+        <div><span data-cd="days">--</span><em>Days</em></div>
+        <div><span data-cd="hours">--</span><em>Hrs</em></div>
+        <div><span data-cd="minutes">--</span><em>Min</em></div>
+        <div><span data-cd="seconds">--</span><em>Sec</em></div>
+      </div>
+      <p class="auction-note" id="auction-date"></p>
+    </div>
+
+    <div class="auction-block">
+      <p class="label">Viewing</p>
+      <p class="auction-value auction-value-sm">By appointment</p>
+      <p class="auction-note">The carpet may be inspected in person, unrolled and under daylight, prior to the close of bidding.</p>
+      <a class="link-arrow" href="#bidding">Arrange a viewing</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     THE STORY / BLOG
+     EDIT ME: this is the long-form history. Replace the prose
+     below with your own. Keep the structure: intro, sub-headings,
+     pull quotes, and inline images.
+     ============================================================ -->
+<main>
+
+<article class="story" id="story">
+  <div class="wrap wrap-narrow">
+
+    <header class="story-head reveal">
+      <p class="eyebrow">The History</p>
+      <h2>The Pair That Was Never Meant to Be Parted</h2>
+      <p class="byline">
+        <span>Written by the owner</span>
+        <span class="dot"></span>
+        <span>A record of sixty years</span>
+      </p>
+    </header>
+
+    <div class="prose">
+
+      <p class="lede reveal">
+        <span class="dropcap">T</span>here are carpets that are made, and there are carpets
+        that are commissioned. This one was commissioned &mdash; twice over, as a pair, on a
+        single cartoon that the workshop never used again. Its twin has not moved in
+        decades. This is the one that travelled.
+      </p>
+
+      <p class="reveal">
+        <em>Replace this paragraph with your own opening. Say where you first saw it, who
+        was in the room, and what it was lying on. The details a photograph can't carry are
+        the ones that sell a carpet like this &mdash; the light in the room, the season it was
+        rolled and unrolled, the person who kept it.</em>
+      </p>
+
+      <!-- Inline image: a wide, atmospheric shot works best here -->
+      <figure class="figure figure-wide reveal">
+        <img src="assets/images/story-01.jpg" alt="The carpet in the room it has lived in"
+             onerror="this.src='assets/images/placeholder.svg';this.classList.add('is-placeholder')">
+        <figcaption>
+          <strong>story-01.jpg</strong> &mdash; the carpet in situ. A room shot gives the eye
+          its scale before the details do.
+        </figcaption>
+      </figure>
+
+      <h3 class="reveal">Nain, and the Weavers Who Made It</h3>
+
+      <p class="reveal">
+        Nain sits at the edge of the central Iranian desert, and until the 1930s it wove
+        cloth, not carpets. When the market for its fine woollen cloaks collapsed, its
+        weavers turned the same thread count to the loom. That is the whole reason a Nain
+        looks the way it does: it was made by people who were already working at a scale
+        finer than carpet weaving normally asks for.
+      </p>
+
+      <p class="reveal">
+        <em>Replace with what you know about this specific workshop, the knot count, the
+        master weaver, the signature in the field if there is one, and the years it took.</em>
+      </p>
+
+      <blockquote class="pullquote reveal">
+        <p>Only two were woven to this design. The other has not been on the market in
+        living memory.</p>
+      </blockquote>
+
+      <h3 class="reveal">Wool and Silk on Silk</h3>
+
+      <p class="reveal">
+        The foundation &mdash; warp and weft both &mdash; is silk. That is the distinction that
+        separates a fine Nain from a very fine one. A silk foundation lets the weaver pack
+        knots more densely than a cotton foundation will allow, and it gives the finished
+        carpet a drape and a weight that you can feel the moment a corner is lifted. The
+        pile is wool, with silk worked through the outlines so that the drawing lifts and
+        changes as you walk around it.
+      </p>
+
+      <div class="figure-pair reveal">
+        <figure class="figure">
+          <img src="assets/images/story-02.jpg" alt="Detail of the pile, showing silk outlining"
+               onerror="this.src='assets/images/placeholder.svg';this.classList.add('is-placeholder')">
+          <figcaption><strong>story-02.jpg</strong> &mdash; close detail of the silk outlining.</figcaption>
+        </figure>
+        <figure class="figure">
+          <img src="assets/images/story-03.jpg" alt="The reverse of the carpet, showing the knotting"
+               onerror="this.src='assets/images/placeholder.svg';this.classList.add('is-placeholder')">
+          <figcaption><strong>story-03.jpg</strong> &mdash; the reverse. The back tells the truth about a carpet.</figcaption>
+        </figure>
+      </div>
+
+      <h3 class="reveal">The Second Carpet</h3>
+
+      <p class="reveal">
+        <em>This is the section that carries the most weight, so write it plainly and write
+        it exactly. State who owned the pair, when, and how it came to be separated. Say
+        which claims you can document and which are held by family account &mdash; a serious
+        buyer will respect the distinction, and will ask for it either way.</em>
+      </p>
+
+      <div class="callout reveal">
+        <p class="label">A note on provenance</p>
+        <p>
+          The ownership history set out on this page is offered as related by the current
+          owner. Supporting documentation, photographs and correspondence are made available
+          to registered bidders on request, and prospective buyers are encouraged to
+          commission their own independent appraisal before bidding.
+        </p>
+      </div>
+
+      <h3 class="reveal">Sixty Years, and Its Condition Today</h3>
+
+      <p class="reveal">
+        <em>Describe the condition honestly and in detail: pile height, any restoration,
+        the state of the fringes and selvedges, sun fade, moth, whether it has been washed
+        and by whom. A frank condition note raises the price of a great carpet. It never
+        lowers it.</em>
+      </p>
+
+      <p class="story-signoff reveal">&mdash; <strong>Your name here</strong>, current custodian</p>
+
+    </div>
+  </div>
+</article>
+
+<!-- ============================================================
+     GALLERY
+     Drop your photographs in assets/images/ using these exact
+     filenames and they will appear here automatically.
+     ============================================================ -->
+<section class="gallery" id="gallery">
+  <div class="wrap">
+    <header class="section-head reveal">
+      <p class="eyebrow">Photography</p>
+      <h2>The Carpet, in Detail</h2>
+      <p class="section-dek">Select any image to view it full screen. Use the arrow keys to move between them.</p>
+    </header>
+
+    <div class="gallery-grid" id="gallery-grid">
+
+      <figure class="gallery-item gallery-item-lg" data-caption="The carpet in full — 13&prime;5&Prime; × 21&prime;3&Prime;">
+        <img src="assets/images/gallery-01-full.jpg" alt="The carpet in full, viewed from above" loading="lazy"
+             onerror="this.src='assets/images/placeholder.svg';this.classList.add('is-placeholder')">
+        <figcaption>The carpet in full</figcaption>
+      </figure>
+
+      <figure class="gallery-item" data-caption="The central medallion">
+        <img src="assets/images/gallery-02-medallion.jpg" alt="The central medallion" loading="lazy"
+             onerror="this.src='assets/images/placeholder.svg';this.classList.add('is-placeholder')">
+        <figcaption>The central medallion</figcaption>
+      </figure>
+
+      <figure class="gallery-item" data-caption="A corner spandrel and the inner guard border">
+        <img src="assets/images/gallery-03-corner.jpg" alt="A corner spandrel" loading="lazy"
+             onerror="this.src='assets/images/placeholder.svg';this.classList.add('is-placeholder')">
+        <figcaption>Corner spandrel</figcaption>
+      </figure>
+
+      <figure class="gallery-item" data-caption="The main border, at full width">
+        <img src="assets/images/gallery-04-border.jpg" alt="The main border" loading="lazy"
+             onerror="this.src='assets/images/placeholder.svg';this.classList.add('is-placeholder')">
+        <figcaption>The main border</figcaption>
+      </figure>
+
+      <figure class="gallery-item" data-caption="The reverse, showing knot density and the silk foundation">
+        <img src="assets/images/gallery-05-reverse.jpg" alt="The reverse of the carpet" loading="lazy"
+             onerror="this.src='assets/images/placeholder.svg';this.classList.add('is-placeholder')">
+        <figcaption>The reverse</figcaption>
+      </figure>
+
+      <figure class="gallery-item" data-caption="The weaver's signature cartouche">
+        <img src="assets/images/gallery-06-signature.jpg" alt="The signature cartouche" loading="lazy"
+             onerror="this.src='assets/images/placeholder.svg';this.classList.add('is-placeholder')">
+        <figcaption>Signature cartouche</figcaption>
+      </figure>
+
+      <figure class="gallery-item gallery-item-wide" data-caption="Shown in a room, for scale">
+        <img src="assets/images/gallery-07-insitu.jpg" alt="The carpet shown in a room for scale" loading="lazy"
+             onerror="this.src='assets/images/placeholder.svg';this.classList.add('is-placeholder')">
+        <figcaption>In situ, for scale</figcaption>
+      </figure>
+
+      <figure class="gallery-item" data-caption="Fringe and selvedge, original and unrestored">
+        <img src="assets/images/gallery-08-fringe.jpg" alt="Fringe and selvedge" loading="lazy"
+             onerror="this.src='assets/images/placeholder.svg';this.classList.add('is-placeholder')">
+        <figcaption>Fringe &amp; selvedge</figcaption>
+      </figure>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SPECIFICATIONS
+     ============================================================ -->
+<section class="specs" id="specifications">
+  <div class="wrap">
+    <header class="section-head reveal">
+      <p class="eyebrow">Catalogue Entry</p>
+      <h2>Specifications</h2>
+    </header>
+
+    <div class="specs-layout">
+      <div class="specs-table reveal">
+        <dl>
+          <div class="spec-row"><dt>Type</dt><dd>Nain (Na&#8217;in), central Iran</dd></div>
+          <div class="spec-row"><dt>Dimensions</dt><dd>13&prime;5&Prime; &times; 21&prime;3&Prime; &nbsp;(4.09 m &times; 6.48 m)</dd></div>
+          <div class="spec-row"><dt>Pile</dt><dd>Wool with silk highlights and outlining</dd></div>
+          <div class="spec-row"><dt>Foundation</dt><dd>Silk warp and silk weft</dd></div>
+          <div class="spec-row"><dt>Age</dt><dd>Over 60 years &mdash; <em>add the year if you know it</em></dd></div>
+          <div class="spec-row"><dt>Knot density</dt><dd><em>Add KPSI / raj &mdash; e.g. 9 la, 600 KPSI</em></dd></div>
+          <div class="spec-row"><dt>Design</dt><dd><em>Add: medallion and corner, Shah Abbasi palmettes, ivory ground &hellip;</em></dd></div>
+          <div class="spec-row"><dt>Edition</dt><dd>One of a matched pair woven to a single cartoon</dd></div>
+          <div class="spec-row"><dt>Signature</dt><dd><em>Add the workshop or master weaver's name if signed</em></dd></div>
+          <div class="spec-row"><dt>Condition</dt><dd><em>Add a frank summary; full report on request</em></dd></div>
+          <div class="spec-row"><dt>Location</dt><dd><em>City, country &mdash; where the carpet is held</em></dd></div>
+        </dl>
+      </div>
+
+      <aside class="specs-aside reveal">
+        <figure class="figure">
+          <img src="assets/images/specs-scale.jpg" alt="Scale diagram of the carpet"
+               onerror="this.src='assets/images/placeholder.svg';this.classList.add('is-placeholder')">
+          <figcaption><strong>specs-scale.jpg</strong> &mdash; optional: a scale drawing or a shot with a person in frame.</figcaption>
+        </figure>
+
+        <div class="doc-list">
+          <p class="label">Available to registered bidders</p>
+          <ul>
+            <li>Full written condition report</li>
+            <li>High-resolution photography set</li>
+            <li>Independent appraisal, on request</li>
+            <li>Provenance file and supporting documents</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PROVENANCE TIMELINE
+     EDIT ME: each <li> is one entry. Keep them short and factual.
+     ============================================================ -->
+<section class="provenance" id="provenance">
+  <div class="wrap wrap-narrow">
+    <header class="section-head section-head-light reveal">
+      <p class="eyebrow">Line of Ownership</p>
+      <h2>Provenance</h2>
+      <p class="section-dek">As related by the current owner. Supporting documentation available on request.</p>
+    </header>
+
+    <ol class="timeline">
+      <li class="reveal">
+        <span class="timeline-year">c. 1960s</span>
+        <h3>Woven in Nain</h3>
+        <p>Commissioned as a pair on a single cartoon. <em>Add the workshop, the master weaver, and how long the pair took on the loom.</em></p>
+      </li>
+      <li class="reveal">
+        <span class="timeline-year">Add year</span>
+        <h3>First ownership</h3>
+        <p><em>Who acquired the pair, and where they were kept.</em></p>
+      </li>
+      <li class="reveal">
+        <span class="timeline-year">Add year</span>
+        <h3>The pair is separated</h3>
+        <p><em>When and how the two carpets parted, and where the second is understood to be today.</em></p>
+      </li>
+      <li class="reveal">
+        <span class="timeline-year">Add year</span>
+        <h3>Present ownership</h3>
+        <p><em>How the carpet came to you, and how it has been kept and cared for since.</em></p>
+      </li>
+      <li class="reveal timeline-now">
+        <span class="timeline-year">Today</span>
+        <h3>Offered at auction</h3>
+        <p>Offered for the first time in <em>[number]</em> years.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============================================================
+     BIDDING / REGISTRATION
+     EDIT ME: change the email address in data-inquiry-email below.
+     The form opens the visitor's mail client and pre-fills it.
+     To collect submissions properly instead, see README.md.
+     ============================================================ -->
+<section class="bidding" id="bidding">
+  <div class="wrap">
+    <div class="bidding-layout">
+
+      <div class="bidding-intro reveal">
+        <p class="eyebrow">Bidding</p>
+        <h2>How to Bid</h2>
+        <ol class="steps">
+          <li><strong>Register your interest.</strong> Complete the form and you will receive the condition report, the full photography set and the reserve.</li>
+          <li><strong>Inspect the carpet.</strong> In person by appointment, or by video walkthrough with the carpet unrolled.</li>
+          <li><strong>Place your bid.</strong> Bids are submitted in writing and acknowledged in writing. The highest bid at the close is invited to complete.</li>
+          <li><strong>Completion and delivery.</strong> Payment by bank transfer or escrow. Fully insured white-glove shipping arranged worldwide at the buyer's cost.</li>
+        </ol>
+
+        <div class="terms">
+          <p class="label">Terms</p>
+          <p>Sold as described and as seen. Buyer's premium and applicable taxes, if any, are set out in the terms issued at registration. The seller reserves the right to withdraw the lot prior to the close of bidding.</p>
+        </div>
+      </div>
+
+      <div class="bidding-form reveal">
+        <!-- EDIT ME: your email address -->
+        <form id="inquiry-form" data-inquiry-email="you@example.com" novalidate>
+          <h3>Register to bid</h3>
+          <p class="form-dek">Every enquiry is answered personally, and in confidence.</p>
+
+          <div class="field">
+            <label for="f-name">Full name</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required>
+          </div>
+
+          <div class="field">
+            <label for="f-email">Email</label>
+            <input id="f-email" name="email" type="email" autocomplete="email" required>
+          </div>
+
+          <div class="field">
+            <label for="f-phone">Telephone <span class="opt">optional</span></label>
+            <input id="f-phone" name="phone" type="tel" autocomplete="tel">
+          </div>
+
+          <div class="field">
+            <label for="f-interest">I would like to</label>
+            <select id="f-interest" name="interest">
+              <option>Receive the condition report and reserve</option>
+              <option>Arrange a viewing</option>
+              <option>Submit a written bid</option>
+              <option>Ask a question</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="f-message">Message <span class="opt">optional</span></label>
+            <textarea id="f-message" name="message" rows="4"></textarea>
+          </div>
+
+          <button class="btn btn-primary btn-block" type="submit">Send enquiry</button>
+          <p class="form-note" id="form-note" role="status"></p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FAQ
+     ============================================================ -->
+<section class="faq" id="faq">
+  <div class="wrap wrap-narrow">
+    <header class="section-head reveal">
+      <p class="eyebrow">Questions</p>
+      <h2>Before You Bid</h2>
+    </header>
+
+    <div class="faq-list reveal">
+      <details>
+        <summary>Can I inspect the carpet in person?</summary>
+        <div class="faq-body"><p>Yes. The carpet is shown unrolled, by appointment, to registered bidders. <em>Add the city and any notice period you need.</em></p></div>
+      </details>
+      <details>
+        <summary>Is the provenance documented?</summary>
+        <div class="faq-body"><p><em>Answer plainly: what you hold in writing, what rests on family account, and what a buyer may independently verify. Say that the provenance file is released to registered bidders.</em></p></div>
+      </details>
+      <details>
+        <summary>Has the carpet been restored or rewoven?</summary>
+        <div class="faq-body"><p><em>Answer in detail. Note any repiling, reweaving, ends and edges work, and when it was last professionally washed.</em></p></div>
+      </details>
+      <details>
+        <summary>How is payment handled?</summary>
+        <div class="faq-body"><p>Bank transfer or a mutually agreed escrow service. Funds clear before the carpet is released for shipment.</p></div>
+      </details>
+      <details>
+        <summary>How will it be shipped?</summary>
+        <div class="faq-body"><p>Rolled on a core, wrapped, crated and fully insured. Specialist fine-art shipping is arranged worldwide at the buyer's cost, with customs documentation prepared in advance.</p></div>
+      </details>
+      <details>
+        <summary>Can I commission my own appraisal?</summary>
+        <div class="faq-body"><p>You are encouraged to. An independent appraiser of your choosing is welcome to examine the carpet before the close of bidding.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <span class="wordmark-mark">N</span>
+      <p><strong>The Nain Pair</strong><br>Lot 01 &middot; Private auction</p>
+    </div>
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="#story">The Story</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#specifications">Specifications</a>
+      <a href="#provenance">Provenance</a>
+      <a href="#faq">Questions</a>
+      <a href="#bidding">Register to Bid</a>
+    </nav>
+    <p class="footer-legal">
+      All descriptions, dates and ownership history are offered in good faith and as related
+      by the current owner. Prospective buyers should satisfy themselves as to condition,
+      authenticity and provenance before bidding.
+    </p>
+  </div>
+</footer>
+
+<!-- Sticky bid bar (mobile + after scroll) -->
+<div class="stickybar" id="stickybar">
+  <div>
+    <strong>Nain Grand Carpet</strong>
+    <span id="stickybar-time">Bidding open</span>
+  </div>
+  <a class="btn btn-primary btn-sm" href="#bidding">Register</a>
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
+  <button class="lb-close" id="lb-close" aria-label="Close">&times;</button>
+  <button class="lb-nav lb-prev" id="lb-prev" aria-label="Previous image">&#8249;</button>
+  <button class="lb-nav lb-next" id="lb-next" aria-label="Next image">&#8250;</button>
+  <figure class="lb-figure">
+    <img id="lb-img" src="" alt="">
+    <figcaption id="lb-caption"></figcaption>
+  </figure>
+</div>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

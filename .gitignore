@@ -1,0 +1,6 @@
+.DS_Store
+Thumbs.db
+*.psd
+*.tif
+*.tiff
+node_modules/
