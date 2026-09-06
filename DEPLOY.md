@@ -86,11 +86,26 @@ beginning `Failed:` or `Error:` names the cause directly.
 
 ---
 
-# GitHub Pages (no configuration, no tokens)
+# GitHub Pages (no tokens, one dropdown)
 
-If Cloudflare stays stubborn, this works with two clicks and no credentials:
+If Cloudflare stays stubborn, this gets the site live with no credentials at all.
 
-**Settings → Pages → Source: Deploy from a branch → Branch: `main` / `(root)` → Save.**
+**Settings → Pages → Build and deployment → Source: `GitHub Actions`.**
 
-The site appears at `https://aminnassiri1982.github.io/Persian-rug/` within a minute or two.
-A custom domain can be pointed at either host later, so this costs nothing to try.
+That is the whole setup. `.github/workflows/deploy-pages.yml` then publishes on every push
+to `main`, and the site appears at `https://aminnassiri1982.github.io/Persian-rug/` a minute
+or so later.
+
+That one dropdown cannot be automated. Creating a Pages site requires administration
+rights, which `GITHUB_TOKEN` cannot be granted no matter what `permissions:` the workflow
+declares — the API answers *"Resource not accessible by integration"*. A person has to flip
+it once; everything after that is automatic.
+
+**Simpler alternative, if you would rather not use the workflow at all:**
+**Settings → Pages → Source: Deploy from a branch → Branch `main` / `(root)` → Save.**
+GitHub then serves the repository directly with no build. The only cost is that the 15 MB
+of originals in `photos-original/` are served too — harmless, since nothing links to them,
+but it makes the site heavier to clone. Deploying via the workflow publishes `dist/`, which
+leaves them out.
+
+A custom domain can be pointed at either host later, so neither choice locks you in.
