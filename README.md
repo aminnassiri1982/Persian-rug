@@ -1,7 +1,8 @@
 # The Nain Pair — Lot 01
 
-A single-page auction site for a monumental Nain carpet: hero, gallery, long-form history,
-catalogue specifications, provenance timeline, bidding instructions and an enquiry form.
+A single-page site for a monumental Nain carpet: hero, catalogue specifications with the
+carpet's palette, gallery, the family history, provenance timeline, the second carpet, and
+a contact block.
 
 Plain HTML, CSS and JavaScript. No build step, no dependencies, no framework. Open
 `index.html` in a browser and it runs.
@@ -47,12 +48,11 @@ Everything you need to change is marked `EDIT ME` in `index.html`.
 ## Enquiries
 
 There is no form and no back end. Every route to contact is a `tel:` link to
-310-592-6293 — the auction bar, the first step of *How to Buy*, the call panel, the sticky
-bar and the footer. On a phone each one dials directly; on a desktop it opens whatever
-calling app the visitor has.
+310-592-6293 — the bar under the hero, the closing contact block, the sticky bar and the
+footer. On a phone each dials directly.
 
-If you later want written enquiries as well, add an `mailto:` link beside the number rather
-than re-introducing a form — a form on a page like this collects mostly spam.
+If you later want written enquiries too, add a `mailto:` link beside the number rather than
+re-introducing a form — a form on a page like this collects mostly spam.
 
 ## A note on the provenance claims
 
