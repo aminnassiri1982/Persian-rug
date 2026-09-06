@@ -1,37 +1,54 @@
 # Photographs
 
-Drop your images into this folder using **exactly these filenames** and they will
-appear on the page automatically. Anything you haven't uploaded yet shows a
-placeholder, so the page always looks finished while you work.
+## What is on the page now
 
-| Filename | Where it appears | What to shoot |
+These are your photographs, cropped, resized to a web-sensible size and optimised. The
+originals are untouched in `photos-original/` at the repo root, so nothing is lost and any
+of these can be regenerated.
+
+| File | Where it appears | From |
 |---|---|---|
-| `hero.jpg` | Full-screen hero | The whole carpet, straight on, as large a file as you have. This one image does most of the selling. |
-| `story-01.jpg` | The Story, wide inline | The carpet in the room it has lived in. Atmosphere over accuracy. |
-| `story-02.jpg` | The Story, left of pair | Close detail of the pile — silk outlining catching the light. |
-| `story-03.jpg` | The Story, right of pair | The reverse, showing the knotting and the silk foundation. |
-| `gallery-01-full.jpg` | Gallery, large tile | The carpet in full, from above if you can get height. |
-| `gallery-02-medallion.jpg` | Gallery | The central medallion. |
-| `gallery-03-corner.jpg` | Gallery | A corner spandrel with the inner guard border. |
-| `gallery-04-border.jpg` | Gallery | The main border at full width. |
-| `gallery-05-reverse.jpg` | Gallery | The reverse — knot density and foundation. |
-| `gallery-06-signature.jpg` | Gallery | The signature cartouche, if the carpet is signed. |
-| `gallery-07-insitu.jpg` | Gallery, wide tile | The carpet in a room, for scale. |
-| `gallery-08-fringe.jpg` | Gallery | Fringe and selvedge, honestly lit. |
-| `specs-scale.jpg` | Specifications sidebar | Optional: a scale drawing, or a shot with a person in frame. |
+| `hero.jpg` | Full-screen hero | `DSC_0583` |
+| `rug-field-border.jpg` | Gallery, large tile | `DSC_0583` |
+| `rug-medallion.jpg` | Gallery | `DSC_0564` |
+| `rug-medallion-angle.jpg` | Gallery | `DSC_0570` |
+| `rug-field-raking.jpg` | The Story, and gallery | `DSC_0575` |
+| `rug-fringe-reverse.jpg` | The Story, and gallery | `DSC_0579` |
+| `rug-measure.jpg` | Specifications sidebar, and gallery | `DSC_0585` |
+| `rug-full-01.jpg` | The Story, wide figure, and gallery | `IMG-2604`, cropped |
+| `rug-full-02.jpg` | Gallery, wide tile | `IMG-2605`, cropped |
 
-## Shooting notes
+The two full-carpet shots were cropped to the carpet and its immediate surround — the
+parked cars, the street and the wheelie bin are out of frame.
 
-- **Daylight, never flash.** Indirect daylight from one side shows the silk. Flash flattens it.
-- **Shoot the whole carpet from as high as you can** — a balcony, a stepladder, a landing.
-  Keep the camera parallel to the floor so the borders stay straight.
-- **Photograph the flaws too.** Any wear, repair, or fade. A buyer at this level will find
-  them anyway, and finding them yourself is what makes the rest of the description credible.
-- **Landscape orientation** suits the layout best, except for the pair of story images.
-- **Size:** 2000–3000 px on the long edge is plenty. Keep files under about 1 MB each so
-  the page stays fast — export JPEG at quality 80.
+`DSC_0583 (1).JPG` was a byte-for-byte duplicate of `DSC_0583.JPG` and was dropped.
 
-## Using different filenames
+## Worth shooting when you can
 
-If you'd rather keep your own names, open `index.html` and edit the `src="..."` on each
-`<img>`. Every image is commented so you can find it quickly.
+The page is complete without these, but each one answers a question a serious buyer will
+ask, and the layout has room for them:
+
+1. **The whole carpet, straight on and from height.** The two full shots are taken at an
+   angle from standing height, so the borders converge and the true proportion is hard to
+   read. From a first-floor window or a tall ladder, camera parallel to the ground, you get
+   the shot that a catalogue leads with. This is the single highest-value photograph left
+   to take.
+2. **The signature cartouche**, if the carpet is signed. Usually woven into one end of the
+   field or the outer border. If it is signed, this is the second most valuable photograph
+   you can produce.
+3. **The reverse, flat and evenly lit**, showing knot density across a hand's width. Lay a
+   coin or a ruler beside it for scale. `rug-fringe-reverse.jpg` shows the back at the
+   fringe, but not the knotting itself.
+4. **The carpet indoors**, in a furnished room. Every image currently on the page is
+   outdoors on concrete. One interior shot changes how the carpet is read.
+5. **Any wear, repair or fade, photographed honestly.** Counter-intuitive, but it is what
+   makes the rest of the description credible.
+
+## Replacing or adding an image
+
+Keep the filenames above and just overwrite the file — the page picks it up with no other
+change. To add a new one, copy any `<figure class="gallery-item">` block in `index.html`
+and point its `src` at the new file.
+
+Export at about 2000 px on the long edge, JPEG quality 80. Anything under roughly 600 KB
+keeps the page fast.
