@@ -26,13 +26,29 @@ jobs:
       contents: read
       deployments: write
     steps:
+      # Until the two secrets exist this workflow has nothing to do. Skipping
+      # cleanly beats failing on every push: a permanently red check is a
+      # check people stop reading.
+      - name: Check for Cloudflare credentials
+        id: guard
+        run: |
+          if [ -z "${{ secrets.CLOUDFLARE_API_TOKEN }}" ] || [ -z "${{ secrets.CLOUDFLARE_ACCOUNT_ID }}" ]; then
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+            echo "::notice title=Cloudflare not configured::Add CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID under Settings -> Secrets and variables -> Actions. See DEPLOY.md. Skipping deploy."
+          else
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Check out the repository
+        if: steps.guard.outputs.configured == 'true'
         uses: actions/checkout@v4
 
       - name: Assemble the site
+        if: steps.guard.outputs.configured == 'true'
         run: npm run build
 
       - name: Publish to Cloudflare Pages
+        if: steps.guard.outputs.configured == 'true'
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
