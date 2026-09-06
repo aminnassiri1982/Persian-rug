@@ -1,5 +1,5 @@
 /* ============================================================
-   The Nain Pair — Lot 01
+   The Nain Pair — a family carpet offered for sale
    A single stylesheet. Colours and type live in :root, so most
    restyling can be done by editing the block below alone.
    ============================================================ */
@@ -110,6 +110,11 @@ h1,h2,h3{ font-family:var(--display); font-weight:400; letter-spacing:.005em; ma
 
 .section-head{ max-width:640px; margin-bottom:clamp(2.5rem,5vw,4rem); }
 .section-head h2{ font-size:clamp(2.1rem,1.4rem + 3vw,3.6rem); line-height:1.08; }
+.section-sub{
+  display:block; margin-top:.65rem;
+  font-size:.44em; line-height:1.25; letter-spacing:.02em;
+  font-style:italic; color:var(--ink-faint);
+}
 .section-dek{ color:var(--ink-soft); margin:1rem 0 0; font-size:1rem; max-width:52ch; }
 .section-head-light .section-dek{ color:rgba(247,242,233,.68); }
 
@@ -137,8 +142,8 @@ h1,h2,h3{ font-family:var(--display); font-weight:400; letter-spacing:.005em; ma
   white-space:nowrap;
 }
 .tel:hover{ color:var(--gold); }
-.auction .tel{ border-bottom-color:var(--gold-lite); }
-.auction .tel:hover{ color:var(--gold-lite); }
+.enquiries .tel{ border-bottom-color:var(--gold-lite); }
+.enquiries .tel:hover{ color:var(--gold-lite); }
 .footer-brand .tel{ color:rgba(247,242,233,.9); border-bottom-color:var(--gold-lite); }
 .footer-brand .tel:hover{ color:var(--gold-lite); }
 
@@ -276,15 +281,15 @@ h1,h2,h3{ font-family:var(--display); font-weight:400; letter-spacing:.005em; ma
 .scroll-cue span{ display:block; width:1px; height:100%; background:rgba(247,242,233,.5); animation:cue 2.4s var(--ease) infinite; }
 @keyframes cue{ 0%{transform:translateY(-100%)} 55%,100%{transform:translateY(100%)} }
 
-/* ---------- auction bar ---------- */
+/* ---------- contact bar ---------- */
 
-.auction{ background:var(--indigo); color:var(--paper); }
-.auction-inner{ text-align:center; padding-block:clamp(2.5rem,5vw,3.5rem); }
-.auction .label{ color:rgba(247,242,233,.55); }
-.auction-value{ font-family:var(--display); font-size:clamp(2.1rem,1.4rem + 2.4vw,3.2rem); line-height:1.1; margin:0 0 .9rem; }
-.auction-note{ font-size:.88rem; color:rgba(247,242,233,.68); margin:0 auto; max-width:46ch; line-height:1.6; }
-.auction .link-arrow{ color:var(--paper); border-color:var(--gold-lite); }
-.auction .link-arrow:hover{ color:var(--gold-lite); }
+.enquiries{ background:var(--indigo); color:var(--paper); }
+.enquiries-inner{ text-align:center; padding-block:clamp(2.5rem,5vw,3.5rem); }
+.enquiries .label{ color:rgba(247,242,233,.55); }
+.enquiries-value{ font-family:var(--display); font-size:clamp(2.1rem,1.4rem + 2.4vw,3.2rem); line-height:1.1; margin:0 0 .9rem; }
+.enquiries-note{ font-size:.88rem; color:rgba(247,242,233,.68); margin:0 auto; max-width:46ch; line-height:1.6; }
+.enquiries .link-arrow{ color:var(--paper); border-color:var(--gold-lite); }
+.enquiries .link-arrow:hover{ color:var(--gold-lite); }
 
 /* ---------- story ---------- */
 

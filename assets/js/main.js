@@ -1,5 +1,5 @@
 /* ============================================================
-   The Nain Pair — Lot 01
+   The Nain Pair — a family carpet offered for sale
    No dependencies. Everything degrades gracefully without JS.
    ============================================================ */
 (function () {

@@ -1,8 +1,8 @@
-# The Nain Pair — Lot 01
+# The Nain Pair
 
-A single-page site for a monumental Nain carpet: hero, catalogue specifications with the
-carpet's palette, gallery, the family history, provenance timeline, the second carpet, and
-a contact block.
+A single-page site for a monumental Nain carpet, offered for sale by the family: hero,
+specifications with the carpet's palette, gallery, the family history, the second carpet,
+provenance timeline, and a contact block.
 
 Plain HTML, CSS and JavaScript. No build step, no dependencies, no framework. Open
 `index.html` in a browser and it runs.
@@ -30,8 +30,8 @@ own can be pointed at it from the same screen.
 
 Everything you need to change is marked `EDIT ME` in `index.html`.
 
-1. **The contact number.** Amin, 310-592-6293. It appears in the auction bar, the bidding
-   steps, the enquiry form, the sticky bar and the footer — search `3105926293` to find
+1. **The contact number.** Amin, 310-592-6293. It appears in the bar under the hero, the
+   closing contact block, the sticky bar and the footer — search `3105926293` to find
    every instance. The `href` is `tel:+13105926293`; the visible text uses non-breaking
    hyphens so the number never splits across a line.
 2. **The remaining catalogue gaps.** Four facts are still marked in italics because only
@@ -76,11 +76,11 @@ link to the article and describe what it shows — the argument survives either 
 ## Design notes
 
 - **Type** — Cormorant Garamond for display, Inter for anything the eye reads as an
-  interface. Auction-catalogue conventions: small caps eyebrows, wide letter-spacing, rules
+  interface. Fine-catalogue conventions: small caps eyebrows, wide letter-spacing, rules
   instead of boxes.
 - **Colour** — ivory paper, ink, Nain indigo and a single gold accent. Nothing else, so the
   carpet supplies all of the colour on the page.
 - **Restraint** — one accent colour, one weight of rule, no shadows, no rounded corners.
-  A luxury lot page competes with a printed catalogue, not with a storefront.
+  A page like this competes with a printed catalogue, not with a storefront.
 - Fully responsive, keyboard-navigable, honours `prefers-reduced-motion`, and prints
   cleanly to PDF (the page furniture drops out) if you want a leave-behind.
