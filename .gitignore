@@ -4,3 +4,4 @@ Thumbs.db
 *.tif
 *.tiff
 node_modules/
+dist/

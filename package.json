@@ -1,0 +1,10 @@
+{
+  "name": "nain-carpet-lot",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Auction lot page for the Nain grand carpet. Static site — no build step is required.",
+  "scripts": {
+    "build": "mkdir -p dist && cp -R index.html assets content dist/ && echo \"Static site copied to dist/\"",
+    "start": "python3 -m http.server 8080"
+  }
+}
