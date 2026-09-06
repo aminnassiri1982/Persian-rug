@@ -1,8 +1,8 @@
 # The Nain Pair
 
 A single-page site for a monumental Nain carpet, offered for sale by the family: hero,
-specifications with the carpet's palette, gallery, the family history, the second carpet,
-provenance timeline, and a contact block.
+specifications with the provenance and the carpet's palette, gallery, the family history,
+the second carpet, and a contact block.
 
 Plain HTML, CSS and JavaScript. No build step, no dependencies, no framework. Open
 `index.html` in a browser and it runs.

@@ -246,7 +246,6 @@ h1,h2,h3{ font-family:var(--display); font-weight:400; letter-spacing:.005em; ma
       rgba(12,9,7,.10) 60%, rgba(12,9,7,.46) 100%);
 }
 .hero .eyebrow{ color:#e0bd63; }
-.provenance .eyebrow{ color:var(--gold-lite); }
 
 .hero-body{
   width:100%; padding:clamp(7rem,14vh,10rem) 0 clamp(4.5rem,9vh,6.5rem);
@@ -436,29 +435,15 @@ h1,h2,h3{ font-family:var(--display); font-weight:400; letter-spacing:.005em; ma
 
 /* ---------- provenance ---------- */
 
-.provenance{ padding-block:var(--section-y); background:var(--ink); color:var(--paper); }
-.provenance .section-head{ text-align:center; margin-inline:auto; }
-.provenance h2{ color:var(--paper); }
-
-.timeline{ list-style:none; margin:0; padding:0; position:relative; }
-.timeline::before{
-  content:""; position:absolute; left:.5rem; top:.6rem; bottom:.6rem; width:1px;
-  background:var(--rule-light);
+.provenance-block{ margin-top:clamp(2.5rem,5vw,3.5rem); }
+.provenance-block dl{ margin:0; border-top:1px solid var(--ink); }
+.provenance-block .spec-row{ grid-template-columns:minmax(8rem,12rem) 1fr; }
+.provenance-block dt{
+  font-family:var(--display); font-size:1.1rem; font-weight:500;
+  letter-spacing:0; text-transform:none; color:var(--ink);
 }
-.timeline li{ position:relative; padding:0 0 2.75rem 3rem; }
-.timeline li::before{
-  content:""; position:absolute; left:0; top:.45rem; width:17px; height:17px;
-  border:1px solid rgba(247,242,233,.4); border-radius:50%; background:var(--ink);
-}
-.timeline li.timeline-now::before{ background:var(--gold-lite); border-color:var(--gold-lite); }
-.timeline li:last-child{ padding-bottom:0; }
-.timeline-year{
-  display:block; font-size:.68rem; letter-spacing:.2em; text-transform:uppercase;
-  color:var(--gold-lite); margin-bottom:.5rem;
-}
-.timeline h3{ font-size:1.5rem; margin:0 0 .5rem; }
-.timeline p{ margin:0; color:rgba(247,242,233,.68); font-size:.95rem; max-width:52ch; }
-.timeline p em{ color:rgba(247,242,233,.5); }
+.provenance-block dd{ font-family:var(--ui); font-size:.95rem; color:var(--ink-soft); line-height:1.6; }
+.provenance-note{ margin:1.25rem 0 0; font-size:.82rem; line-height:1.7; color:var(--ink-faint); max-width:70ch; }
 
 /* ---------- the second carpet ---------- */
 
@@ -626,6 +611,6 @@ h1,h2,h3{ font-family:var(--display); font-weight:400; letter-spacing:.005em; ma
   .site-header,.stickybar,.lightbox,.scroll-cue,.hero-actions{ display:none !important; }
   body{ background:#fff; color:#000; }
   .reveal{ opacity:1; transform:none; }
-  .provenance,.site-footer{ background:#fff; color:#000; }
-  .timeline p,.footer-legal{ color:#333; }
+  .site-footer{ background:#fff; color:#000; }
+  .footer-legal{ color:#333; }
 }
